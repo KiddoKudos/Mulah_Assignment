@@ -10,7 +10,7 @@ function MulahTable() {
 
   useEffect(() => {
     const fetchData = () => {
-      fetch("/Table_Input.csv")
+      fetch(process.env.PUBLIC_URL + "/Table_Input.csv")
         .then((response) => response.text())
         .then((data) => {
           Papa.parse<RowData>(data, {
